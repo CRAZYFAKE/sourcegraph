@@ -3,9 +3,9 @@ import * as React from 'react'
 import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 
-import '../global.scss'
+import '../../app.scss'
 
-import { OptionsMenu } from '../../src/libs/options/Menu'
+import { OptionsMenu } from './Menu'
 
 storiesOf('Options - OptionsMenu', module)
     .add('Default', () => (
@@ -20,6 +20,8 @@ storiesOf('Options - OptionsMenu', module)
                 featureFlags={[]}
                 isSettingsOpen={false}
                 toggleFeatureFlag={action('Feature flag toggled')}
+                requestPermissions={() => void 0}
+                urlHasPermissions={true}
             />
         </div>
     ))
@@ -34,6 +36,8 @@ storiesOf('Options - OptionsMenu', module)
                 onSettingsClick={action('Settings clicked')}
                 isSettingsOpen={true}
                 toggleFeatureFlag={action('Feature flag toggled')}
+                requestPermissions={() => void 0}
+                urlHasPermissions={true}
             />
         </div>
     ))
